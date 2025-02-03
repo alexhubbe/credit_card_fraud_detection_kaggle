@@ -1,26 +1,15 @@
-# House Prices - Advanced Regression Techniques (Kaggle Competition)
+# Credit Card Fraud Detection
 
-This repository contains the solution and analysis for the Kaggle competition **["House Prices: Advanced Regression Techniques"](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)**. The objective of this competition is to predict the final sale price of homes based on a variety of features, such as square footage, number of rooms, location.
+This repository contains the analyses for the Kaggle's **[Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)**. I adopted the 
 
 ![](https://github.com/alexhubbe/house_prices_kaggle_competition/blob/master/reports/images/sale_prices.png)
+credit: FreePix.uk
 
-My main goal was to improve [AutoGluon](https://autogluon.mxnet.io/)’s prediction score with data engineering. 
+My main goal was to improve the score[AutoGluon](https://autogluon.mxnet.io/)’s prediction score with data engineering. 
 
 ## Key Findings:
 - Improved AutoGluon's baseline prediction score by approximately 3.3% through data engineering techniques (Table 1).
 - Achieved a top 3% ranking among nearly 5000 competitors.
-
-### Table 1: Approaches employed that improved the model performance
-
-|    Data   | Autogluon presets, <br> time (min) | Score (rmse) | Score Improvement (%) |
-|:---------:|:-----------------------:|:------------:| :------------: |
-| Original data   | Good, 30   | .11847   | - |
-| + longitude and latitude   | Good, 30   | .11773   | 0.62  |
-| - 'Street', 'Utilities', 'RoofMatl','Condition2','PoolQC' | Good, 30   | .11771  | 0.64 |
-| + NaN treatment | Good, 30   | .11624 | 1.88 |
-| + Median price from surrounding houses | Good, 30   | .11486 | 3.05|
-| + Interactions among top 10 features | Good, 30   | .11460 | 3.30|
-
 
 Below I succinctly describe the steps developed. 
 
@@ -76,7 +65,7 @@ At this stage, I went through several procedures:
 | All-Transactions House Price Index for Ames, IA |  
 
 ## Tools and Technologies:
-- **Libraries**: AutoGluon, Featuretools, Matplotlib, Numpy, Pandas, Seaborn, Scikit-Learn, 
+- **Libraries**: Imblearn, Matplotlib, Numpy, Optuna, Pandas, Seaborn, Scikit-Learn, Xgboost
 
 
 ## Project organization
@@ -142,3 +131,7 @@ Submit issues for:
 - Fork the repository and clone it.
 - Create a branch and commit your changes.
 - Push your changes and open a pull request for review.
+
+### References
+
+Le Borgne, Y.-A., Siblini, W., Lebichot, B., & Bontempi, G. (2022). Reproducible Machine Learning for Credit Card Fraud Detection—Practical Handbook. Université Libre de Bruxelles.

@@ -139,8 +139,6 @@ def plot_correlation_heatmap(df, figsize=(12, 12), cmap="cividis", method="pears
 # Example usage:
 # plot_correlation_heatmap(df, figsize=(10, 10), cmap="coolwarm", method="spearman", fontsize=12)
 
-# Example usage:
-# plot_correlation_heatmap(df, figsize=(10, 10), cmap="coolwarm", title="Spearman Correlation Heatmap", method="spearman")
 
 def plot_boxplot_by_focal_variable(df, focal_column, focal_variable=None, n_cols=3):
     """
@@ -271,6 +269,58 @@ def plot_boxplot_cat(df, cat_variable, focal_variables, ncols=1):
     plt.tight_layout()
     plt.show()
 
+def plot_stripplot_cat(df, cat_variable, focal_variables, ncols=1):
+    """
+    Plots boxplots for focal variables grouped by a categorical variable.
+    
+    Parameters:
+    df (DataFrame): The dataset containing the data.
+    cat_variable (str): The categorical variable to group by.
+    focal_variables (list or str): The variable(s) for which to plot the boxplots.
+    ncols (int): The number of columns in the subplot grid (default is 1).
+    """
+
+    if not isinstance(cat_variable, str):  # Check if it's not a string
+        cat_variable = ''.join(cat_variable)  # Convert list to string if needed
+    
+    # Ensure focal_variables is a list (if only a single variable is provided)
+    if isinstance(focal_variables, str):
+        focal_variables = [focal_variables]
+    
+    n_focal = len(focal_variables)
+    
+    # Calculate the number of rows needed for the subplot grid
+    nrows = (n_focal // ncols) + (n_focal % ncols > 0)  # Calculate number of rows needed for subplots
+    
+    # Create a figure with subplots
+    fig, axes = plt.subplots(nrows, ncols, figsize=(10, 6 * nrows))
+    
+    # Flatten axes array to easily loop through it
+    axes = axes.flatten() if n_focal > 1 else [axes]
+    
+    # Loop over the focal variables and create a plot for each
+    for idx, focal_variable in enumerate(focal_variables):
+        # Boxplot plotting
+        ax = axes[idx]  # Select the appropriate axis for this plot
+        
+        # Use seaborn to create a boxplot
+        sns.stripplot(x=cat_variable, y=focal_variable, data=df, ax=ax, color='skyblue', jitter=True, size=6, alpha=0.8)
+        
+        # Labels and title
+        ax.set_xlabel(cat_variable.replace('_', ' ').title())
+        ax.set_ylabel(focal_variable.replace('_', ' ').title())
+        ax.set_title(f'{focal_variable.replace("_", " ").title()} by {cat_variable.replace("_", " ").title()}')
+        
+        # Rotate x-axis labels for better readability
+        ax.tick_params(axis='x', rotation=45)
+    
+    # Remove any unused axes (in case the number of focal variables is less than the grid size)
+    for i in range(n_focal, len(axes)):
+        fig.delaxes(axes[i])
+    
+    plt.tight_layout()
+    plt.show()
+
 
 def plot_categories_comparison(df, cat_variable, focal_variables, max_columns=4, figsize=(10, 10), title_distance=0.925):
     """
@@ -330,3 +380,34 @@ def plot_categories_comparison(df, cat_variable, focal_variables, max_columns=4,
     
     # Show the plot
     plt.show()
+
+
+def check_columns_in_feature_dict(df, feature_dict):
+    """
+    Check if all columns were included in the feature_dict and compare with df columns.
+    
+    Args:
+        df (DataFrame): The pandas DataFrame containing the data.
+        feature_dict (dict): A dictionary where values contain lists of features.
+    """
+    # Flatten the features list from feature_dict
+    all_features = [item for sublist in feature_dict.values() for item in sublist]
+
+    # Check for duplicates in the feature_dict
+    duplicates = [feature for feature in set(all_features) if all_features.count(feature) > 1]
+
+    if duplicates:
+        print("Warning: Duplicate features found in feature_dict")
+        print("Duplicated features:", duplicates)
+
+    elif sorted(df.columns) == sorted(all_features):
+        print('All good in feature_dict')
+
+    else:
+        columns_set = set(df.columns)
+        features_set = set(all_features)
+        missing_in_df = features_set - columns_set  # Features in feature_dict but not in df.columns
+        extra_in_df = columns_set - features_set   # Columns in df.columns but not in feature_dict
+        print("Missing in DataFrame:", missing_in_df)
+        print("Extra in DataFrame:", extra_in_df)
+
