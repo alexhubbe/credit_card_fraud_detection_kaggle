@@ -15,7 +15,7 @@ CLEAN_DATA = DATA_FOLDER / "creditcard.parquet"
 
 # put the path for the project model files below
 MODELS_FOLDER = PROJECT_FOLDER / "models"
-DEPLOYED_MODEL = MODELS_FOLDER/"best_model_pkl"
+DEPLOYED_MODEL = MODELS_FOLDER/"best_model.pkl"
 
 # put any other necessary paths below
 REPORT_FOLDER = PROJECT_FOLDER / "reports"
