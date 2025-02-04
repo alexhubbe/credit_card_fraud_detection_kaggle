@@ -1,15 +1,17 @@
 # Credit Card Fraud Detection
 
-This repository contains the analyses for the Kaggle's **[Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)**. I adopted the 
+This repository contains the analyses for the Kaggle's **[Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)**. 
 
-![](https://github.com/alexhubbe/house_prices_kaggle_competition/blob/master/reports/images/sale_prices.png)
+<img src="https://github.com/alexhubbe/credit_card_fraud_detection_kaggle/blob/main/reports/images/readme_image.jpg" width="80%" alt="Readme Image">
 credit: FreePix.uk
 
-My main goal was to improve the score[AutoGluon](https://autogluon.mxnet.io/)’s prediction score with data engineering. 
+My main goal was to improve the score on the test dataset by preprocessing the data and optimizing the hyperparameter using Optuna. The score adopted was `Average Precision`, as it is appropriate for cases with high imbalanced dataset, such in Credit Card Fraud Detection cases (Borgne et al., 2022). The machine learning methodss were `Logistic Regression`, `Randon Forest` and `XGBooster`. The first for its simplicity and the other two because they are well suitated methods for this kind of analysis (Borgne et al., 2022).  
 
 ## Key Findings:
-- Improved AutoGluon's baseline prediction score by approximately 3.3% through data engineering techniques (Table 1).
-- Achieved a top 3% ranking among nearly 5000 competitors.
+- The preprocessing choice can improve from 3% to 29% the score on the test dataset, depending on the machine learning method (Figure 1).
+- Hyperparameter optimization improved in 1% to 2% the score on the test dataset, depending on the machine learning method (Figure 2).
+
+
 
 Below I succinctly describe the steps developed. 
 

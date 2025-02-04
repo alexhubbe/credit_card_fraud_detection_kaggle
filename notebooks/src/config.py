@@ -20,3 +20,6 @@ DEPLOYED_MODEL = MODELS_FOLDER/"best_model_pkl"
 # put any other necessary paths below
 REPORT_FOLDER = PROJECT_FOLDER / "reports"
 IMAGES_FOLDER = REPORT_FOLDER / "images"
+
+PREPROCESSOR_FIG = IMAGES_FOLDER/'preprocessor.jpg' 
+HP_OPTIMIZATION_FIG = IMAGES_FOLDER/'hp_optimization.jpg'
