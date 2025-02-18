@@ -100,9 +100,9 @@ In this phase, I implemented the following steps:
 │  
 ├── reports                            <- Generated analyses in HTML, PDF, LaTeX, etc., and results  
 │   └── images                         <- Images used in the project  
-│      ├── hp_optimization.jpg         <- Graph showing results from hyperparameter optimization  
-│      ├── preprocessor.jpg            <- Graph showing results from preprocessing analysis  
-│      ├── readme_image.jpg            <- Image to illustrate the README  
+│       ├── hp_optimization.jpg        <- Graph showing results from hyperparameter optimization  
+│       ├── preprocessor.jpg           <- Graph showing results from preprocessing analysis  
+│       ├── readme_image.jpg           <- Image to illustrate the README  
 
 ```
 
