@@ -1,7 +1,9 @@
 # Credit Card Fraud Detection  
 [Go to German Version](#german-version)
 
-This repository contains the analyses for the Kaggle dataset **[Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)**.  
+This repository contains the analyses for the Kaggle dataset **[Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)**. See the summary report [here](https://github.com/alexhubbe/credit_card_fraud_detection_kaggle/blob/main/reports/summary_report.md).
+
+
 
 <p align="center">
 <img src="https://github.com/alexhubbe/credit_card_fraud_detection_kaggle/blob/main/reports/images/readme_image.jpg" width="80%" alt="Readme Image">
@@ -136,7 +138,7 @@ Le Borgne, Y.-A., Siblini, W., Lebichot, B., & Bontempi, G. (2022). Reproducible
 
 # Kreditkartenbetrugserkennung  
 
-Dieses Repository enthält die Analysen für den Kaggle-Datensatz **[Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)**.  
+Dieses Repository enthält die Analysen für den Kaggle-Datensatz **[Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)**. Siehe den zusammenfassenden Bericht [hier](https://github.com/alexhubbe/credit_card_fraud_detection_kaggle/blob/main/reports/summary_report.md)
 
 <p align="center">
 <img src="https://github.com/alexhubbe/credit_card_fraud_detection_kaggle/blob/main/reports/images/readme_image.jpg" width="80%" alt="Readme Image">
