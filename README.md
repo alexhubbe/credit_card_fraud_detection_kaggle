@@ -199,7 +199,7 @@ In dieser Phase wurden die folgenden Schritte implementiert:
 - **Bibliotheken**: Imbalanced-learn, Matplotlib, NumPy, Optuna, Pandas, Seaborn, Scikit-Learn, XGBoost  
 
 ## Projektorganisation
-
+```
 ├── .gitignore                         <- Dateien und Verzeichnisse, die von Git ignoriert werden sollen  
 │  
 ├── environments.yml                   <- Anforderungsdatei zur Reproduktion der Analyseumgebung  
@@ -239,6 +239,7 @@ In dieser Phase wurden die folgenden Schritte implementiert:
 │       ├── hp_optimization.jpg        <- Grafik mit den Ergebnissen der Hyperparameter-Optimierung  
 │       ├── preprocessor.jpg           <- Grafik mit den Ergebnissen der Vorverarbeitungsanalyse  
 │       ├── readme_image.jpg           <- Bild zur Veranschaulichung der README  
+```
 
 ## Mitwirkung
 Alle Beiträge sind willkommen!
