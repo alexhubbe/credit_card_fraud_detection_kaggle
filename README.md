@@ -1,5 +1,5 @@
 # Credit Card Fraud Detection  
-[🇩🇪 Deutsche Version]((#german-version)
+[🇩🇪 Deutsche Version](#german-version)
 
 This repository contains the analyses for the Kaggle dataset **[Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)**. See the summary report [here](https://github.com/alexhubbe/credit_card_fraud_detection_kaggle/blob/main/reports/summary_report.md).
 
