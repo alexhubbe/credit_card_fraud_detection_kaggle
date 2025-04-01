@@ -13,7 +13,7 @@ This repository contains the analyses for the Kaggle dataset **[Credit Card Frau
 
 My main goal was to improve the score on the test dataset by preprocessing the data and optimizing hyperparameters using Optuna.  
 
-The evaluation metric used was `Average Precision`, as it is well-suited for highly imbalanced datasets, such as credit card fraud detection (Borgne et al., 2022). The machine learning methods applied were `Logistic Regression`, `Random Forest`, and `XGBoost`. Logistic Regression was chosen for its simplicity, while Random Forest and XGBoost are well-suited for this type of analysis (Borgne et al., 2022).  
+The evaluation metric used was `Average Precision`, as it is well-suited for highly imbalanced datasets, such as credit card fraud detection (Borgne et al., 2022). The machine learning methods applied were `Logistic Regression`, `Random Forest`, and `XGBoost`. Logistic Regression was chosen for its simplicity, while Random Forest and XGBoost are well-suited for this type of analysis (Borgne et al., 2022). Additionally, I used the ensembling methods `Stacking` and `Voting`.
 
 ## Key Findings  
 - The choice of preprocessing strategy improved the test dataset score by **1.1% to 30%**, depending on the machine learning method (Figure 1).  
@@ -61,6 +61,9 @@ In this phase, I implemented the following steps:
 
 3. **Hyperparameter Optimization**  
    - Utilized the **Optuna** framework to optimize hyperparameters, improving the test dataset scores over the default **Scikit-Learn** and **XGBoost** hyperparameters.  
+
+4. **Ensemble**  
+   - Utilized the **Stacking** and **Voting** methods, with the Voting method improving test dataset scores compared to the best single-model approach.
 
 ---
 
@@ -148,7 +151,7 @@ Dieses Repository enthält die Analysen für den Kaggle-Datensatz **[Credit Card
 
 Mein Hauptziel war es, die Bewertung des Testdatensatzes durch die Vorverarbeitung der Daten und die Optimierung von Hyperparametern mit Optuna zu verbessern.  
 
-Als Bewertungsmetrik wurde `Average Precision` verwendet, da sie gut für stark unausgeglichene Datensätze geeignet ist, wie z. B. die Erkennung von Kreditkartenbetrug (Borgne et al., 2022). Die angewendeten maschinellen Lernmethoden waren `Logistische Regression`, `Random Forest` und `XGBoost`. Die Logistische Regression wurde aufgrund ihrer Einfachheit gewählt, während Random Forest und XGBoost gut für diese Art der Analyse geeignet sind (Borgne et al., 2022).  
+Als Bewertungsmetrik wurde `Average Precision` verwendet, da sie gut für stark unausgeglichene Datensätze geeignet ist, wie z. B. die Erkennung von Kreditkartenbetrug (Borgne et al., 2022). Die angewendeten maschinellen Lernmethoden waren `Logistische Regression`, `Random Forest` und `XGBoost`. Die Logistische Regression wurde aufgrund ihrer Einfachheit gewählt, während Random Forest und XGBoost gut für diese Art der Analyse geeignet sind (Borgne et al., 2022). Zusätzlich habe ich die Ensembling-Methoden `Stacking` und `Voting` verwendet.  
 
 ## Wichtige Erkenntnisse  
 - Die Wahl der Vorverarbeitungsstrategie verbesserte die Bewertung des Testdatensatzes um **1,1 % bis 30 %**, abhängig von der maschinellen Lernmethode (Abbildung 1).  
@@ -195,7 +198,10 @@ In dieser Phase wurden die folgenden Schritte implementiert:
    - Verwendung der hybriden Über- und Unterabtastungsmethode **SMOTE-TOMEK**, um zu bestätigen, dass Average Precision robust gegenüber Klassenungleichgewichten ist.
 
 3. **Hyperparameter-Optimierung**  
-   - Verwendung des **Optuna**-Frameworks zur Optimierung von Hyperparametern, wodurch die Bewertungen des Testdatensatzes im Vergleich zu den Standard-Hyperparametern von **Scikit-Learn** und **XGBoost** verbessert wurden.  
+   - Verwendung des **Optuna**-Frameworks zur Optimierung von Hyperparametern, wodurch die Bewertungen des Testdatensatzes im Vergleich zu den Standard-Hyperparametern von **Scikit-Learn** und **XGBoost** verbessert wurden.
+
+3. **Ensemble**  
+   - Verwendete die Methoden **Stacking** und **Voting**, wobei die Voting-Methode die Testergebnisscores im Vergleich zum besten Einzelmodellansatz verbesserte.
 
 ## Tools und Technologien  
 - **Bibliotheken**: Imbalanced-learn, Matplotlib, NumPy, Optuna, Pandas, Seaborn, Scikit-Learn, XGBoost  
